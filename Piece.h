@@ -13,7 +13,7 @@ class Piece {
         black, white
     };
 
-    Piece(Piece::Color color, Square& location) : _color(color) {
+    Piece(const Piece::Color color, Square& location) : _color(color) {
         this->set_location(&location);
     }
 
@@ -30,7 +30,7 @@ class Piece {
     virtual std::string str() const = 0;
 
   private:
-    Piece::Color _color;
+    const Piece::Color _color;
     Square* _location = nullptr;
 };
 
