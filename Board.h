@@ -67,6 +67,9 @@ class Board {
 
 /**
  * Sends the board to an output stream.
+ *
+ * Each square has to output itself.
+ *
  * @param os
  * @param board
  * @return
