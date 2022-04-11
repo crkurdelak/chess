@@ -6,57 +6,58 @@
 
 class Board {
   public:
+    // The number of ranks and files
     static const size_t SIZE = 8;
 
 
     /**
-     * @brief
+     * @brief Constructs a new board.
      *
-     * Allocate squares
+     * Dynamically allocates 64 new squares and stores their addressed in the 8x8 _squares array.
      */
     Board();
 
 
     /**
-     * @brief
-     * @param rank
-     * @param file
-     * @return
+     * @brief Returns the square at the given rank and file.
+     * @param rank the rank of the square
+     * @param file the file of the square
+     * @return the square at the given rank and file
      */
     Square& square_at(size_t rank, size_t file) const;
 
 
     /**
      * @brief Returns true if the given rank is clear.
-     * @param from
-     * @param to
+     * @param from the starting square
+     * @param to the ending square
      * @return true if the given rank is a valid rank and is clear; else return false
      */
     bool is_clear_rank(const Square& from, const Square& to) const;
 
 
     /**
-     * @brief
-     * @param from
-     * @param to
-     * @return
+     * @brief Returns true if the given file is clear.
+     * @param from the starting square
+     * @param to the ending square
+     * @return true if the given file is a valid file and is clear; else return false
      */
     bool is_clear_file(const Square& from, const Square& to) const;
 
 
     /**
-     *
-     * @param from
-     * @param to
-     * @return
+     * @brief Returns true if the given diagonal is clear.
+     * @param from the starting square
+     * @param to the ending square
+     * @return true if the given diagonal is a valid diagonal and is clear; else return false
      */
     bool is_clear_diag(const Square& from, const Square& to) const;
 
 
     /**
+     * A destructor for the board.
      *
-     *
-     * Delete all squares you allocated
+     * Deletes all the squares dynamically allocated by the constructor
      */
     ~Board();
 
@@ -70,9 +71,9 @@ class Board {
  *
  * Each square has to output itself.
  *
- * @param os
- * @param board
- * @return
+ * @param os the output stream
+ * @param board the board to be output
+ * @return the output stream
  */
 std::ostream& operator<<(std::ostream& os, const Board& board);
 

@@ -7,45 +7,45 @@
 class Square {
   public:
     /**
-     * @brief
-     * @param rank
-     * @param file
+     * @brief Creates a new square.
+     * @param rank the rank of the new square
+     * @param file the file of the new square
      */
     Square(size_t rank, size_t file) : _rank(rank), _file(file) { }
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns the rank of this square.
+     * @return the rank of this square
      */
     size_t rank() const;
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns the file of this square.
+     * @return the file of this square
      */
     size_t file() const;
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns true if this square is occupied.
+     * @return true if this square is occupied; else returns false
      */
     bool is_occupied() const;
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns a pointer to the occupant of this square.
+     * @return a pointer to the occupant of this square
      */
     Piece* occupant() const;
 
 
   private:
     /**
-     * @brief
-     * @param occupant
+     * @brief Sets the occupant of this square to a new value.
+     * @param occupant the new occupant of this square
      */
     void set_occupant(Piece* occupant);
 
@@ -64,10 +64,10 @@ class Square {
 
 
 /**
- * @brief Outputs this square and its occupant if it has one.
- * @param os
- * @param square
- * @return
+ * @brief Outputs a square and its occupant if it has one.
+ * @param os the output stream
+ * @param square the square to be output
+ * @return the output stream
  */
 std::ostream& operator<<(std::ostream& os, const Square& square);
 
