@@ -65,6 +65,9 @@ class Square {
 
 /**
  * @brief Outputs a square and its occupant if it has one.
+ *
+ * If the square has  no occupant, return a single space character instead.
+ *
  * @param os the output stream
  * @param square the square to be output
  * @return the output stream
