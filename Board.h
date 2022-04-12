@@ -13,7 +13,7 @@ class Board {
     /**
      * @brief Constructs a new board.
      *
-     * Dynamically allocates 64 new squares and stores their addressed in the 8x8 _squares array.
+     * Dynamically allocates 64 new squares and stores their addresses in the 8x8 _squares array.
      */
     Board();
 
