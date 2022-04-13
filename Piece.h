@@ -20,9 +20,9 @@ class Piece {
 
 
     /**
-     * @brief
-     * @param color
-     * @param location
+     * @brief Creates a new piece with the given color and location
+     * @param color the color of the piece
+     * @param location the location of the piece
      */
     Piece(const Piece::Color color, Square& location) : _color(color) {
         this->set_location(&location);
@@ -30,59 +30,62 @@ class Piece {
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns the value of this piece.
+     * @return the value of this piece.
      */
     virtual piece_value_t value() const = 0;
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns the color of this piece.
+     * @return the color of this piece
      */
     Piece::Color color() const;
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns the location of this piece.
+     * @return the location of this piece
      */
     Square* location() const;
 
 
     /**
-     * @brief
-     * @param location
+     * @brief Sets the location of this piece to the given location.
+     * @param location the new location of this piece
      */
     void set_location(Square* location);
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns true if this piece is on a square.
+     * @return true if this piece is on a square; else return false
      */
     bool is_on_square() const;
 
 
     /**
-     * @brief
-     * @param location
-     * @return
+     * @brief Returns true if this piece can move to the given location.
+     * @param location the location to test
+     * @return true if this piece can move to the given location; else return false
      */
     virtual bool can_move_to(const Square& location) const = 0;
 
 
     /**
-     * @brief
-     * @param location
-     * @return
+     * @brief Moves this piece to the given location.
+     * @param location the new location
+     * @return true if successful; else return false
      */
     bool move_to(Square& location);
 
 
     /**
-     * @brief
-     * @return
+     * @brief Returns a string representation of this piece.
+     *
+     * Each piece is represented by a Unicode character.
+     *
+     * @return a string representation of this piece
      */
     virtual std::string str() const = 0;
 
