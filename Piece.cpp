@@ -2,21 +2,22 @@
 #include "Square.h"
 
 Piece::Color Piece::color() const {
-    return Piece::Color::black;
+    return _color;
 }
 
 Square *Piece::location() const {
-    return nullptr;
+    return _location;
 }
 
 void Piece::set_location(Square *location) {
-
+    _location = location;
 }
 
 bool Piece::is_on_square() const {
-    return false;
+    return _location != nullptr;
 }
 
 bool Piece::move_to(Square &location) {
-    return false;
+    set_location(&location);
+    return true;
 }

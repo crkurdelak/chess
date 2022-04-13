@@ -59,6 +59,9 @@ class Piece {
 
     /**
      * @brief Returns true if this piece is on a square.
+     *
+     * If a piece is not on a square, its location attribute will be a null pointer.
+     *
      * @return true if this piece is on a square; else return false
      */
     bool is_on_square() const;
@@ -100,9 +103,9 @@ class Piece {
  *
  * Calls the piece's str() method.
  *
- * @param os
- * @param piece
- * @return
+ * @param os the output stream
+ * @param piece the piece to be output
+ * @return the output stream
  */
 std::ostream& operator<<(std::ostream& os, const Piece& piece);
 

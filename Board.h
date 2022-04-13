@@ -70,7 +70,7 @@ class Board {
      * @param square the square to check
      * @return true if the square is within the bounds of the board; else return false
      */
-    bool is_in_bounds(const Square &square) const;
+    static bool is_in_bounds(const Square &square) ;
 };
 
 

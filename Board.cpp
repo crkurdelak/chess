@@ -2,8 +2,6 @@
 #include "Piece.h"
 
 Board::Board() {
-    // for each cell in array, make a new square and store a pointer to it in there
-
     // rank
     for (int i = 0; i < SIZE; i++) {
         // file
@@ -89,11 +87,16 @@ Board::~Board() {
     }
 }
 
-bool Board::is_in_bounds(const Square &square) const {
+bool Board::is_in_bounds(const Square &square) {
     return square.rank() >= 0 && square.rank() < SIZE && square.file() >= 0 && square.file() < SIZE;
 }
 
 
 std::ostream &operator<<(std::ostream &os, const Board &board) {
+    // for each rank
+    // for each file
+    // draw line
+    // output square
+    // draw line
     return <#initializer#>;
 }
