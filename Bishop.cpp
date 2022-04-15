@@ -11,7 +11,9 @@ bool Bishop::can_move_to(const Square &location) const {
     double slope = (location.rank() - this -> location()->rank()) / (location.file() - this ->
             location()->file());
 
-    if (slope - 1 <= EPSILON || slope + 1 <= EPSILON) {
+    if (&location != this -> location()
+    && (slope - 1 <= EPSILON
+    || slope + 1 <= EPSILON)) {
         result = true;
     }
     return result;

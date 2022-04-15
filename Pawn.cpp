@@ -7,8 +7,9 @@ piece_value_t Pawn::value() const {
 
 bool Pawn::can_move_to(const Square &location) const {
     bool result = false;
-    if (location.rank() == this -> location()->rank() + 1 && location.file() == this -> location
-    () ->file()) {
+    if (&location != this -> location()
+    && location.rank() == this -> location()->rank() + 1
+    && location.file() == this -> location() ->file()) {
         result = true;
     }
     return result;
