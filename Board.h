@@ -64,7 +64,6 @@ class Board {
   private:
     Square* _squares[SIZE][SIZE] = {};
 
-
     /**
      * Returns true if the given square is within the bounds of the board.
      * @param square the square to check

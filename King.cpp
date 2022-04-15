@@ -8,8 +8,8 @@ piece_value_t King::value() const {
 bool King::can_move_to(const Square &location) const {
     const double EPSILON = 1e-10;
     bool result = false;
-    double slope = (location.rank() - this -> location()->rank()) / (location.file() - this ->
-            location()->file());
+    double slope = (location.rank() * 1.0 - this -> location()->rank()) / (location.file() * 1.0 -
+            this -> location()->file());
 
     bool is_one_square = location.rank() == this -> location()->rank() + 1 || location.rank() ==
             this -> location()->rank() - 1 || location.file() == this -> location()->file() + 1 ||

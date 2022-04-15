@@ -59,7 +59,7 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
 bool Board::is_clear_diag(const Square &from, const Square &to) const {
     const double EPSILON = 1e-10;
     bool is_clear = true;
-    double slope = (to.rank() - from.rank()) / (to.file() - from.file());
+    double slope = (to.rank() * 1.0 - from.rank()) / (to.file() * 1.0 - from.file());
     if (is_in_bounds(from) && is_in_bounds(to) && (slope - 1 <= EPSILON || slope + 1 <= EPSILON)) {
         size_t rank = from.rank();
         size_t file = from.file();

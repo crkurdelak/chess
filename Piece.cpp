@@ -10,6 +10,9 @@ Square *Piece::location() const {
 }
 
 void Piece::set_location(Square *location) {
+    Square old_location = * this->location();
+    location->set_occupant(this);
+    old_location.set_occupant(nullptr);
     _location = location;
 }
 
@@ -18,9 +21,11 @@ bool Piece::is_on_square() const {
 }
 
 bool Piece::move_to(Square &location) {
-    Square old_location = * this->location();
-    set_location(&location);
-    location.set_occupant(this);
-    old_location.set_occupant(nullptr);
-    return true;
+    bool result = false;
+    if (can_move_to(location)) {
+        set_location(&location);
+        result = true;
+    }
+
+    return result;
 }
