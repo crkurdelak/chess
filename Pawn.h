@@ -35,7 +35,7 @@ class Pawn : public Piece {
     std::string str() const override;
 
 private:
-    const int VALUE = 1;
+    const unsigned int VALUE = 1;
 };
 
 #endif

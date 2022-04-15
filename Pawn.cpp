@@ -5,7 +5,12 @@ piece_value_t Pawn::value() const {
 }
 
 bool Pawn::can_move_to(const Square &location) const {
-    return false;
+    bool result = false;
+    if (location.rank() += this -> location().rank() && location.file() == this -> location()
+            .file) {
+        result = true;
+    }
+    return result;
 }
 
 std::string Pawn::str() const {

@@ -59,7 +59,7 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
 bool Board::is_clear_diag(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t slope = (to.rank() - from.rank()) / (to.file() - from.file());
-    if (is_in_bounds(from) && is_in_bounds(to) && slope == 1) {
+    if (is_in_bounds(from) && is_in_bounds(to) && (slope == 1 || slope == -1)) {
         size_t rank = from.rank();
         size_t file = from.file();
         while (rank < to.rank() && file < to.file() && is_clear) {
