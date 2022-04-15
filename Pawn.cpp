@@ -1,13 +1,14 @@
 #include "Pawn.h"
+#include "Square.h"
 
 piece_value_t Pawn::value() const {
-    return VALUE;
+    return 1;
 }
 
 bool Pawn::can_move_to(const Square &location) const {
     bool result = false;
-    if (location.rank() += this -> location().rank() && location.file() == this -> location()
-            .file) {
+    if (location.rank() == this -> location()->rank() + 1 && location.file() == this -> location
+    () ->file()) {
         result = true;
     }
     return result;

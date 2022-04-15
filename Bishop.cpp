@@ -1,14 +1,17 @@
 #include "Bishop.h"
+#include "Square.h"
 
 piece_value_t Bishop::value() const {
     return VALUE;
 }
 
 bool Bishop::can_move_to(const Square &location) const {
+    const double EPSILON = 1e-10;
     bool result = false;
-    size_t slope = (location.rank() - this -> location().rank()) / (location.file() - this ->
-            location().file());
-    if (slope == 1 || slope == -1) {
+    double slope = (location.rank() - this -> location()->rank()) / (location.file() - this ->
+            location()->file());
+
+    if (slope - 1 <= EPSILON || slope + 1 <= EPSILON) {
         result = true;
     }
     return result;

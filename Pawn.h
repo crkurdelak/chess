@@ -33,9 +33,6 @@ class Pawn : public Piece {
      * @copydoc Piece::str
      */
     std::string str() const override;
-
-private:
-    const unsigned int VALUE = 1;
 };
 
 #endif

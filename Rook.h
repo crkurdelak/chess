@@ -33,10 +33,6 @@ class Rook : public Piece {
      * @copydoc Piece::str
      */
     std::string str() const override;
-
-
-private:
-    const unsigned int VALUE = 5;
 };
 
 #endif

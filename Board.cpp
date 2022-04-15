@@ -57,9 +57,10 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
 
 
 bool Board::is_clear_diag(const Square &from, const Square &to) const {
+    const double EPSILON = 1e-10;
     bool is_clear = true;
-    size_t slope = (to.rank() - from.rank()) / (to.file() - from.file());
-    if (is_in_bounds(from) && is_in_bounds(to) && (slope == 1 || slope == -1)) {
+    double slope = (to.rank() - from.rank()) / (to.file() - from.file());
+    if (is_in_bounds(from) && is_in_bounds(to) && (slope - 1 <= EPSILON || slope + 1 <= EPSILON)) {
         size_t rank = from.rank();
         size_t file = from.file();
         while (rank < to.rank() && file < to.file() && is_clear) {
@@ -98,5 +99,5 @@ std::ostream &operator<<(std::ostream &os, const Board &board) {
     // draw line
     // output square
     // draw line
-    return <#initializer#>;
+    return os;
 }
