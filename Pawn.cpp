@@ -36,7 +36,7 @@ std::string Pawn::str() const {
     }
     else {
         //piece_symbol = "♙";
-        piece_symbol = "P";
+        piece_symbol = "p";
     }
     return piece_symbol;
 }

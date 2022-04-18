@@ -39,9 +39,7 @@ std::ostream &operator<<(std::ostream &os, const Square &square) {
         os << " ";
     }
     else {
-        // TODO fix segmentation fault here
         Piece* occupant = square.occupant();
-        // this is where segmentation fault is happening
         std::string occupant_string = occupant->str();
         os << square.occupant()->str();
     }
