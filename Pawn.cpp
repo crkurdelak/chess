@@ -7,10 +7,23 @@ piece_value_t Pawn::value() const {
 
 bool Pawn::can_move_to(const Square &location) const {
     bool result = false;
-    if (&location != this -> location()
-    && location.rank() == this -> location()->rank() + 1
-    && location.file() == this -> location() ->file()) {
-        result = true;
+    if (this -> location() != nullptr) {
+        if (&location != this->location()) {
+            // black can only move to smaller rank numbers (larger indices)
+            if (this->color() == Piece::Color::black) {
+                if (location.rank() == this->location()->rank() + 1
+                && location.file() == this->location()->file()) {
+                    result = true;
+                }
+            }
+            // white can only move to larger rank number (smaller indices)
+            else {
+                if (location.rank() == this->location()->rank() - 1
+                && location.file() == this->location()->file()) {
+                    result = true;
+                }
+            }
+        }
     }
     return result;
 }

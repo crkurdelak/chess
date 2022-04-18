@@ -10,9 +10,11 @@ Square *Piece::location() const {
 }
 
 void Piece::set_location(Square *location) {
-    Square old_location = * this->location();
+    if (this->location() != nullptr) {
+        Square old_location = *this->location();
+        old_location.set_occupant(nullptr);
+    }
     location->set_occupant(this);
-    old_location.set_occupant(nullptr);
     _location = location;
 }
 

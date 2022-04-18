@@ -7,10 +7,12 @@ piece_value_t Rook::value() const {
 
 bool Rook::can_move_to(const Square &location) const {
     bool  result = false;
-    if(&location != this -> location()
-    && (location.file() == this -> location()->file()
-    || location.rank() == this -> location()->rank())) {
-        result = true;
+    if (this -> location() != nullptr) {
+        if (&location != this->location()
+            && (location.file() == this->location()->file()
+                || location.rank() == this->location()->rank())) {
+            result = true;
+        }
     }
     return result;
 }

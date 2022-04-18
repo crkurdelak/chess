@@ -8,14 +8,15 @@ piece_value_t Bishop::value() const {
 bool Bishop::can_move_to(const Square &location) const {
     const double EPSILON = 1e-10;
     bool result = false;
-    double slope = (location.rank() * 1.0 - this -> location()->rank()) / (location.file() * 1.0 -
-            this ->
-            location()->file());
+    if (this -> location() != nullptr) {
+        double slope = (location.rank() * 1.0 - this->location()->rank()) / (location.file() * 1.0 -
+                this->location()->file());
 
-    if (&location != this -> location()
-    && (slope - 1 <= EPSILON
-    || slope + 1 <= EPSILON)) {
-        result = true;
+        if (&location != this->location()
+            && (slope - 1 <= EPSILON
+                || slope + 1 <= EPSILON)) {
+            result = true;
+        }
     }
     return result;
 }

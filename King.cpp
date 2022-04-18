@@ -8,18 +8,22 @@ piece_value_t King::value() const {
 bool King::can_move_to(const Square &location) const {
     const double EPSILON = 1e-10;
     bool result = false;
-    double slope = (location.rank() * 1.0 - this -> location()->rank()) / (location.file() * 1.0 -
-            this -> location()->file());
+    if (this -> location() != nullptr) {
+        double slope = (location.rank() * 1.0 - this->location()->rank()) / (location.file() * 1.0
+                - this->location()->file());
 
-    bool is_one_square = location.rank() == this -> location()->rank() + 1 || location.rank() ==
-            this -> location()->rank() - 1 || location.file() == this -> location()->file() + 1 ||
-            location.file() == this -> location()->file() - 1;
+        bool is_one_square = location.rank() == this->location()->rank() + 1
+                || location.rank() == this->location()->rank() -1
+                || location.file() == this->location()->file() + 1
+                || location.file() == this->location()->file() - 1;
 
-    if ((slope - 1 <= EPSILON || slope + 1 <= EPSILON || location.file() == this -> location()->file()
-    ||
-    location
-    .rank() == this -> location()->rank()) && is_one_square) {
-        result = true;
+        if ((slope - 1 <= EPSILON || slope + 1 <= EPSILON ||
+             location.file() == this->location()->file()
+             ||
+             location
+                     .rank() == this->location()->rank()) && is_one_square) {
+            result = true;
+        }
     }
     return result;
 }
