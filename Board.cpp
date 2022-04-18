@@ -7,6 +7,7 @@ Board::Board() {
         // file
         for (int j = 0; j < SIZE; j++) {
             Square new_square = * new Square(i, j);
+            // why is it changing every index to store the current square's address?
             _squares[i][j] = &new_square;
         }
     }

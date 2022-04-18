@@ -35,11 +35,15 @@ void Square::set_occupant(Piece *occupant) {
 
 
 std::ostream &operator<<(std::ostream &os, const Square &square) {
-    if (square.is_occupied()) {
+    if (!square.is_occupied()) {
         os << " ";
     }
     else {
-        os << square.occupant();
+        // TODO fix segmentation fault here
+        Piece* occupant = square.occupant();
+        // this is where segmentation fault is happening
+        std::string occupant_string = occupant->str();
+        os << square.occupant()->str();
     }
     return os;
 }
