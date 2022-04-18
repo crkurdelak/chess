@@ -10,7 +10,7 @@ bool Knight::can_move_to(const Square &location) const {
     bool result = false;
     if (this -> location() != nullptr) {
         double slope = (location.rank() * 1.0 - this->location()->rank()) / (location.file() * 1.0 -
-                                                                             this->location()->file());
+                this->location()->file());
         // 2 squares in same file, one in rank +- 1 or 2 squares in same rank, one in file +- 1
         // (slope == 2 || slope == 1/2) && (rank +-1 || file +- 1)
         if (&location != this->location()

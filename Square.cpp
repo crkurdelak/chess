@@ -35,10 +35,10 @@ void Square::set_occupant(Piece *occupant) {
 
 std::ostream &operator<<(std::ostream &os, const Square &square) {
     if (square.is_occupied()) {
-        os << " ";
+        os << "│     │";
     }
     else {
-        os << square.occupant();
+        os << "│  " << square.occupant() << "  │";
     }
     return os;
 }
