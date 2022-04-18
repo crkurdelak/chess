@@ -94,7 +94,6 @@ bool Board::is_in_bounds(const Square &square) {
 
 
 std::ostream &operator<<(std::ostream &os, const Board &board) {
-
     //     a     b     c     d     e     f     g     h
     //  ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
     // 8│     │     │     │     │     │     │     │     │8
@@ -122,7 +121,7 @@ std::ostream &operator<<(std::ostream &os, const Board &board) {
     for (int i = Board::SIZE; i > 0;  i--) {
         for (int j = Board::SIZE; j > 0; j--) {
             // output _squares[i][j]
-            os << board.square_at(i, j);
+            os << "│  " << board.square_at(i, j) << "  │";
         }
         // output dividers
         if (i > 1) {
