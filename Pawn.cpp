@@ -31,10 +31,12 @@ bool Pawn::can_move_to(const Square &location) const {
 std::string Pawn::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
-        piece_symbol = "♟";
+        //piece_symbol = "♟";
+        piece_symbol = "P";
     }
     else {
-        piece_symbol = "♙";
+        //piece_symbol = "♙";
+        piece_symbol = "P";
     }
     return piece_symbol;
 }

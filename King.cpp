@@ -31,10 +31,12 @@ bool King::can_move_to(const Square &location) const {
 std::string King::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
-        piece_symbol = "♚";
+        //piece_symbol = "♚";
+        piece_symbol = "K";
     }
     else {
-        piece_symbol = "♔";
+        //piece_symbol = "♔";
+        piece_symbol = "k";
     }
     return piece_symbol;
 }

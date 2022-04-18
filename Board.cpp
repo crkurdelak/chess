@@ -94,6 +94,7 @@ bool Board::is_in_bounds(const Square &square) {
 
 
 std::ostream &operator<<(std::ostream &os, const Board &board) {
+
     //     a     b     c     d     e     f     g     h
     //  ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
     // 8│     │     │     │     │     │     │     │     │8
@@ -114,22 +115,29 @@ std::ostream &operator<<(std::ostream &os, const Board &board) {
     //  └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
     //     a     b     c     d     e     f     g     h
 
-    os << "    a     b     c     d     e     f     g     h   /n"
-       << " └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘ /n";
+    os << "    a     b     c     d     e     f     g     h   " << std::endl;
+    //os << " └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘ /n";
+      os << " +-----+-----+-----+-----+-----+-----+-----+-----+";
 
     // output squares and dividers from bottom to top
-    for (int i = Board::SIZE; i > 0;  i--) {
-        for (int j = Board::SIZE; j > 0; j--) {
+    for (int i = 0; i < Board::SIZE;  i++) {
+        for (int j = 0; j < Board::SIZE; j++) {
+            if (j == Board::SIZE || j == 1) {
+                // rank label
+                os << i;
+            }
             // output _squares[i][j]
-            os << "│  " << board.square_at(i, j) << "  │";
+            os << " |  " << board.square_at(i, j);
         }
         // output dividers
-        if (i > 1) {
-            os << "/n ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ /n";
-        }
+        os << std::endl << " +-----+-----+-----+-----+-----+-----+-----+-----+ " << std::endl;
+
+        //if (i > 1) {
+        //    os << "/n ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ /n";
+        //}
     }
-    os << "/n ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐ /n"
-       << "    a     b     c     d     e     f     g     h    ";
+    //os << "/n ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐ /n"
+    os << "    a     b     c     d     e     f     g     h    " << std::endl;
 
     return os;
 }

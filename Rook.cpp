@@ -20,10 +20,12 @@ bool Rook::can_move_to(const Square &location) const {
 std::string Rook::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
-        piece_symbol = "♜";
+        //piece_symbol = "♜";
+        piece_symbol = "R";
     }
     else {
-        piece_symbol = "♖";
+        //piece_symbol = "♖";
+        piece_symbol = "r";
     }
     return piece_symbol;
 }

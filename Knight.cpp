@@ -32,10 +32,12 @@ bool Knight::can_move_to(const Square &location) const {
 std::string Knight::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
-        piece_symbol = "♞";
+        //piece_symbol = "♞";
+        piece_symbol = "N";
     }
     else {
-        piece_symbol = "♘";
+        //piece_symbol = "♘";
+        piece_symbol = "n";
     }
     return piece_symbol;
 }

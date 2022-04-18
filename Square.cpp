@@ -13,6 +13,7 @@ size_t Square::file() const {
 
 bool Square::is_occupied() const {
     bool result;
+    // TODO fix problem with nullptr
     if (_occupant == nullptr) {
         result = false;
     }

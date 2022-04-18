@@ -24,10 +24,12 @@ bool Bishop::can_move_to(const Square &location) const {
 std::string Bishop::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
-        piece_symbol = "♝";
+        //piece_symbol = "♝";
+        piece_symbol = "B";
     }
     else {
-        piece_symbol = "♗";
+        //piece_symbol = "♗";
+        piece_symbol = "b";
     }
     return piece_symbol;
 }
