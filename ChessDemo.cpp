@@ -62,6 +62,22 @@ int main() {
     std::cout << game_board.square_at(0, 3).occupant()->can_move_to(game_board.square_at(6, 0))
     << std::endl;
 
+    //1 forward
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(1, 4));
+    //1 sideways
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(0, 3));
+    //1 diag
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(1, 5));
+    //0 illegal
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(0, 6));
+    //0 illegal
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(2, 4));
+    //0 illegal
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(2, 6));
+    //0 illegal
+    std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(6, 0))
+              << std::endl;
+
     //game_board.~Board();
 }
 
