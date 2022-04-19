@@ -23,7 +23,7 @@ int main() {
     new Knight(Piece::Color::white, game_board.square_at(7, 2));
     new Bishop(Piece::Color::black, game_board.square_at(0, 6));
     new Bishop(Piece::Color::white, game_board.square_at(7, 1));
-    new Rook(Piece::Color::black, game_board.square_at(0, 7));
+    new Rook(Piece::Color::black, game_board.square_at(3, 3));
     new Rook(Piece::Color::white, game_board.square_at(7, 0));
 
     Piece &pawn = *square.occupant();
@@ -104,6 +104,18 @@ int main() {
     std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(1, 4));
     //0
     std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(0, 2))
+    << std::endl;
+
+    //1 (forward)
+    std::cout << game_board.square_at(3, 3).occupant()->can_move_to(game_board.square_at(6, 3));
+    //1 (backward)
+    std::cout << game_board.square_at(3, 3).occupant()->can_move_to(game_board.square_at(1, 3));
+    //1 (left)
+    std::cout << game_board.square_at(3, 3).occupant()->can_move_to(game_board.square_at(3, 0));
+    //1 (right)
+    std::cout << game_board.square_at(3, 3).occupant()->can_move_to(game_board.square_at(3, 7));
+    //0 (illegal)
+    std::cout << game_board.square_at(3, 3).occupant()->can_move_to(game_board.square_at(0, 6))
     << std::endl;
 
 
