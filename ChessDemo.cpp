@@ -19,7 +19,7 @@ int main() {
     new Queen(Piece::Color::white, game_board.square_at(7, 4));
     new King(Piece::Color::black, game_board.square_at(0, 4));
     new King(Piece::Color::white, game_board.square_at(7, 3));
-    new Knight(Piece::Color::black, game_board.square_at(0, 5));
+    new Knight(Piece::Color::black, game_board.square_at(3, 5));
     new Knight(Piece::Color::white, game_board.square_at(7, 2));
     new Bishop(Piece::Color::black, game_board.square_at(0, 6));
     new Bishop(Piece::Color::white, game_board.square_at(7, 1));
@@ -83,7 +83,29 @@ int main() {
     //1 diag (slope +1)
     std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(6, 0));
     //0 illegal
-    std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(1, 2));
+    std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(1, 2))
+    << std::endl;
+
+    //1 (slope )
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(5, 6));
+    //1 (slope)
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(5, 4));
+    //1 (slope )
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(4, 7));
+    //1 (slope)
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(2, 7));
+    //1 (slope )
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(4, 3));
+    //1 (slope)
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(2, 3));
+    //1 (slope )
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(1, 6));
+    //1 (slope)
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(1, 4));
+    //0
+    std::cout << game_board.square_at(3, 5).occupant()->can_move_to(game_board.square_at(0, 2))
+    << std::endl;
+
 
     //game_board.~Board();
 }
