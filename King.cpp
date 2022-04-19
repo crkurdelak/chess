@@ -17,11 +17,11 @@ bool King::can_move_to(const Square &location) const {
                 || location.file() == this->location()->file() + 1
                 || location.file() == this->location()->file() - 1;
 
-        if ((slope - 1 <= EPSILON || slope + 1 <= EPSILON ||
-             location.file() == this->location()->file()
-             ||
-             location
-                     .rank() == this->location()->rank()) && is_one_square) {
+        if ((slope - 1 <= EPSILON
+            || slope + 1 <= EPSILON // TODO fix this
+            || location.file() == this->location()->file()
+            ||location.rank() == this->location()->rank())
+            && is_one_square) {
             result = true;
         }
     }

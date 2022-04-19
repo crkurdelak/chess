@@ -10,14 +10,16 @@ bool Queen::can_move_to(const Square &location) const {
     bool result = false;
     if (this -> location() != nullptr) {
         double slope = (location.rank() * 1.0 - this->location()->rank()) / (location.file() * 1.0 -
-                                                                             this->location()->file());
+                this->location()->file());
 
         if (&location != this->location()
-            && (slope - 1 <= EPSILON
-                || slope + 1 <= EPSILON
-                || location.file() == this->location()->file()
-                || location.rank() == this->location()->rank())) {
-            result = true;
+            && ((slope > 0
+                && slope - 1 <= EPSILON)
+            || (slope < 0
+                && slope + 1 >= EPSILON)
+            || location.file() == this->location()->file()
+            || location.rank() == this->location()->rank())) {
+                result = true;
         }
     }
     return result;
