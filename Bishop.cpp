@@ -15,7 +15,7 @@ bool Bishop::can_move_to(const Square &location) const {
         if (&location != this->location()
             && ((slope > 0
             && slope - 1 <= EPSILON)
-            || (slope < 0 && slope + 1 >= EPSILON))) {
+            || (slope < 0 && slope + 1 <= EPSILON))) {
             result = true;
         }
     }

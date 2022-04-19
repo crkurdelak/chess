@@ -78,6 +78,13 @@ int main() {
     std::cout << game_board.square_at(0, 4).occupant()->can_move_to(game_board.square_at(6, 0))
               << std::endl;
 
+    //1 diag (slope -1)
+    std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(1, 7));
+    //1 diag (slope +1)
+    std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(6, 0));
+    //0 illegal
+    std::cout << game_board.square_at(0, 6).occupant()->can_move_to(game_board.square_at(1, 2));
+
     //game_board.~Board();
 }
 
