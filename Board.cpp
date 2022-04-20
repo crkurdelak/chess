@@ -22,7 +22,7 @@ bool Board::is_clear_rank(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t rank = from.rank();
     if (is_in_bounds(from) && is_in_bounds(to) && rank == to.rank()) {
-        size_t i = from.file();
+        size_t i = from.file() + 1;
         while (i < to.file() && is_clear) {
             if (_squares[rank][i]->is_occupied()) {
                 is_clear = false;
@@ -41,7 +41,7 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t file = from.file();
     if (is_in_bounds(from) && is_in_bounds(to) && file == to.file()) {
-        size_t i = from.rank();
+        size_t i = from.rank() + 1;
         while (i < to.rank() && is_clear) {
             if (_squares[i][file]->is_occupied()) {
                 is_clear = false;
@@ -60,9 +60,14 @@ bool Board::is_clear_diag(const Square &from, const Square &to) const {
     const double EPSILON = 1e-10;
     bool is_clear = true;
     double slope = (to.rank() * 1.0 - from.rank()) / (to.file() * 1.0 - from.file());
-    if (is_in_bounds(from) && is_in_bounds(to) && (slope - 1 <= EPSILON || slope + 1 <= EPSILON)) {
-        size_t rank = from.rank();
-        size_t file = from.file();
+    if (is_in_bounds(from)
+    && is_in_bounds(to)
+    && ((slope > 0
+    && slope - 1 <= EPSILON)
+    || (slope < 0
+    && slope + 1 <= EPSILON))) {
+        size_t rank = from.rank() + 1;
+        size_t file = from.file() + 1;
         while (rank < to.rank() && file < to.file() && is_clear) {
             if (_squares[rank][file]->is_occupied()) {
                 is_clear = false;
