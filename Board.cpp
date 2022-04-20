@@ -93,6 +93,7 @@ Board::~Board() {
     }
 }
 
+
 bool Board::is_in_bounds(const Square &square) {
     return square.rank() >= 0
     && square.rank() < SIZE
