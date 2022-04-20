@@ -94,7 +94,10 @@ Board::~Board() {
 }
 
 bool Board::is_in_bounds(const Square &square) {
-    return square.rank() >= 0 && square.rank() < SIZE && square.file() >= 0 && square.file() < SIZE;
+    return square.rank() >= 0
+    && square.rank() < SIZE
+    && square.file() >= 0
+    && square.file() < SIZE;
 }
 
 
