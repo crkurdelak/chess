@@ -1,9 +1,18 @@
+/**
+ * @file Rook.h
+ * @brief Declarations for the Rook class.
+ */
+
 #ifndef ROOK_H
 #define ROOK_H
 
 #include <iostream>
 #include "Piece.h"
 
+
+/**
+ * @brief A class representing a rook.
+ */
 class Rook : public Piece {
   public:
     /**

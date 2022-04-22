@@ -1,3 +1,8 @@
+/**
+ * @file King.cpp
+ * @brief DImplementation of the King class.
+ */
+
 #include "King.h"
 #include "Square.h"
 

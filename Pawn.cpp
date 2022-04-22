@@ -1,3 +1,8 @@
+/**
+ * @file Pawn.cpp
+ * @brief Implementation of the Pawn class.
+ */
+
 #include "Pawn.h"
 #include "Square.h"
 

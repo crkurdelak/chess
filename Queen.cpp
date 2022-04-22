@@ -1,3 +1,8 @@
+/**
+ * @file Queen.cpp
+ * @brief Implementation of the Queen class.
+ */
+
 #include "Queen.h"
 #include "Square.h"
 

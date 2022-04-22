@@ -1,9 +1,18 @@
+/**
+ * @file Knight.h
+ * @brief Declarations for the Knight class.
+ */
+
 #ifndef KNIGHT_H
 #define KNIGHT_H
 
 #include <iostream>
 #include "Piece.h"
 
+
+/**
+ * @brief A class representing a knight.
+ */
 class Knight : public Piece {
   public:
     /**

@@ -1,3 +1,8 @@
+/**
+ * @file Knight.cpp
+ * @brief Implementation of the Knight class.
+ */
+
 #include "Knight.h"
 #include "Square.h"
 

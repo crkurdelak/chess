@@ -1,3 +1,8 @@
+/**
+ * @file Board.cpp
+ * @brief Implementation of the Board class.
+ */
+
 #include "Board.h"
 #include "Piece.h"
 

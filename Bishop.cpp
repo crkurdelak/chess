@@ -1,3 +1,8 @@
+/**
+ * @file Bishop.cpp
+ * @brief Implementation of the Bishop class.
+ */
+
 #include "Bishop.h"
 #include "Square.h"
 

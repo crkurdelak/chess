@@ -1,9 +1,17 @@
+/**
+ * @file Queen.h
+ * @brief Declarations for the Queen class.
+ */
+
 #ifndef QUEEN_H
 #define QUEEN_H
 
 #include <iostream>
 #include "Piece.h"
 
+/**
+ * @brief A class representing a queen
+ */
 class Queen : public Piece {
   public:
     /**

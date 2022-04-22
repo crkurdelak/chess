@@ -1,9 +1,17 @@
+/**
+ * @file Pawn.h
+ * @brief Declarations for the Pawn class.
+ */
+
 #ifndef PAWN_H
 #define PAWN_H
 
 #include <iostream>
 #include "Piece.h"
 
+/**
+ * @brief A class representing a pawn.
+ */
 class Pawn : public Piece {
   public:
     /**

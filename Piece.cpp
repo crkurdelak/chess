@@ -1,3 +1,8 @@
+/**
+ * @file Piece.cpp
+ * @brief Implementation of the Piece class.
+ */
+
 #include "Piece.h"
 #include "Square.h"
 

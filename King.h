@@ -1,9 +1,17 @@
+/**
+ * @file King.h
+ * @brief Declarations for the King class.
+ */
+
 #ifndef KING_H
 #define KING_H
 
 #include <iostream>
 #include "Piece.h"
 
+/**
+ * @brief A class representing a king.
+ */
 class King : public Piece {
   public:
     /**

@@ -1,9 +1,18 @@
+/**
+ * @file Square.h
+ * @brief Declarations for the Square class.
+ */
+
 #ifndef SQUARE_H
 #define SQUARE_H
 
 #include <iostream>
 #include "Piece.h"
 
+
+/**
+ * @brief A class representing a square on a chess board.
+ */
 class Square {
   public:
     /**

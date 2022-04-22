@@ -1,3 +1,8 @@
+/**
+ * @file Rook.cpp
+ * @brief Implementation of the Rook class.
+ */
+
 #include "Rook.h"
 #include "Square.h"
 

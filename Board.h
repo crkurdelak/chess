@@ -1,9 +1,18 @@
+/**
+ * @file Board.h
+ * @brief Declarations for the Board class.
+ */
+
 #ifndef BOARD_H
 #define BOARD_H
 
 #include <iostream>
 #include "Square.h"
 
+
+/**
+ * @brief A class representing a chess board.
+ */
 class Board {
   public:
     // The number of ranks and files

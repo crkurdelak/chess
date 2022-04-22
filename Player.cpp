@@ -1,6 +1,7 @@
-//
-// TODO comment
-//
+/**
+ * @file Player.cpp
+ * @brief Implementation of the Player class.
+ */
 
 #include "Player.h"
 

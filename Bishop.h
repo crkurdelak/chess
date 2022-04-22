@@ -1,9 +1,17 @@
+/**
+ * @file Bishop.h
+ * @brief Declarations for the Bishop class.
+ */
+
 #ifndef BISHOP_H
 #define BISHOP_H
 
 #include <iostream>
 #include "Piece.h"
 
+/**
+ * @brief A class representing a bishop.
+ */
 class Bishop : public Piece {
   public:
     /**

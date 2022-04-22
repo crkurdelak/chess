@@ -1,6 +1,7 @@
-//
-// TODO comment
-//
+/**
+ * @file Player.h
+ * @brief Declarations for the Player class.
+ */
 
 #ifndef CHESS_PLAYER_H
 #define CHESS_PLAYER_H
@@ -11,6 +12,9 @@
 #include "Piece.h"
 #include "King.h"
 
+/**
+ * @brief A class representing a player in a chess game.
+ */
 class Player {
 public:
     /**

@@ -1,3 +1,8 @@
+/**
+ * @file Piece.h
+ * @brief Declarations for the Piece class.
+ */
+
 #ifndef PIECE_H
 #define PIECE_H
 
@@ -9,6 +14,10 @@ class Square;
 // type alias
 typedef unsigned int piece_value_t;
 
+
+/**
+ * @brief A class representing a chess piece.
+ */
 class Piece {
   public:
     /**
