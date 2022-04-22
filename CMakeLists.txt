@@ -21,4 +21,4 @@ add_executable(chess
         Queen.cpp
 
         Rook.cpp
-        Square.cpp ChessDemo.cpp)
+        Square.cpp ChessDemo.cpp Chess.cpp Chess.h Player.cpp Player.h)
