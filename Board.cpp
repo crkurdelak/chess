@@ -18,6 +18,12 @@ Square &Board::square_at(size_t rank, size_t file) const {
 }
 
 
+Square &Board::square_at(const std::string &identifier) const {
+    // TODO implement square_at
+    return <#initializer#>;
+}
+
+
 bool Board::is_clear_rank(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t rank = from.rank();
@@ -99,6 +105,22 @@ bool Board::is_in_bounds(const Square &square) {
     && square.rank() < SIZE
     && square.file() >= 0
     && square.file() < SIZE;
+}
+
+
+bool Board::is_valid_rank(const Square &from, const Square &to) const {
+    // TODO implement is_valid_rank
+    return false;
+}
+
+bool Board::is_valid_file(const Square &from, const Square &to) const {
+    // TODO implement is_valid_file
+    return false;
+}
+
+bool Board::is_valid_diag(const Square &from, const Square &to) const {
+    // TODO implement is_valid_diag
+    return false;
 }
 
 

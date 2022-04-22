@@ -6,6 +6,7 @@ piece_value_t Pawn::value() const {
 }
 
 bool Pawn::can_move_to(const Square &location) const {
+    // TODO make it able to move one diagonal square to capture
     bool result = false;
     if (this -> location() != nullptr) {
         if (&location != this->location()) {
@@ -28,6 +29,14 @@ bool Pawn::can_move_to(const Square &location) const {
     return result;
 }
 
+
+bool Pawn::move_to(Square &location) {
+    // TODO implement move_to
+    // needs to be able to move 2 spaces if this pawn has not moved yet
+    return Piece::move_to(location);
+}
+
+
 std::string Pawn::str() const {
     std::string piece_symbol;
     if (this -> color() == Piece::Color::black) {
@@ -40,3 +49,5 @@ std::string Pawn::str() const {
     }
     return piece_symbol;
 }
+
+

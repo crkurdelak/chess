@@ -80,7 +80,13 @@ class Piece {
      * @param location the new location
      * @return true if successful; else return false
      */
-    bool move_to(Square& location);
+    virtual bool move_to(Square& location);
+
+
+    /**
+     * TODO comment
+     */
+    void capture();
 
 
     /**
@@ -92,7 +98,14 @@ class Piece {
      */
     virtual std::string str() const = 0;
 
-  private:
+
+    /**
+     *
+     */
+    virtual ~Piece() = default;
+
+
+private:
     const Piece::Color _color;
     Square* _location = nullptr;
 };

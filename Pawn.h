@@ -29,10 +29,23 @@ class Pawn : public Piece {
 
 
     /**
+     * TODO comment
+     * @param location
+     * @return
+     */
+    bool move_to(Square& location) override;
+
+
+    /**
      *
      * @copydoc Piece::str
      */
     std::string str() const override;
+
+
+private:
+    bool _moved = false;
+
 };
 
 #endif

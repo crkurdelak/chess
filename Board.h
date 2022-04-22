@@ -28,6 +28,41 @@ class Board {
 
 
     /**
+     * TODO comment
+     * @param identifier
+     * @return
+     */
+    Square& square_at(const std::string& identifier) const;
+
+
+    /**
+     * TODO comment
+     * @param from
+     * @param to
+     * @return
+     */
+    bool is_valid_rank(const Square& from, const Square& to) const;
+
+
+    /**
+     * TODO comment
+     * @param from
+     * @param to
+     * @return
+     */
+    bool is_valid_file(const Square& from, const Square& to) const;
+
+
+    /**
+     * TODO comment
+     * @param from
+     * @param to
+     * @return
+     */
+    bool is_valid_diag(const Square& from, const Square& to) const;
+
+
+    /**
      * @brief Returns true if the given rank is clear.
      * @param from the starting square
      * @param to the ending square

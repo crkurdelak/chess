@@ -31,3 +31,7 @@ bool Piece::move_to(Square &location) {
 
     return result;
 }
+
+void Piece::capture() {
+    // TODO implement capture
+}

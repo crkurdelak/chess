@@ -60,6 +60,7 @@ class Square {
      * it can set the occupant of the square.
      */
     friend void Piece::set_location(Square* location);
+    friend void Piece::capture();
 };
 
 
