@@ -37,9 +37,13 @@ class Pawn : public Piece {
 
 
     /**
-     * TODO comment
-     * @param location
-     * @return
+     * @brief Moves this piece to the given location.
+     *
+     * Overrides move_to in Piece so that the pawn sets its "moved" flag and can move two squares
+     * if it has not yet moved.
+     *
+     * @param location the new location
+     * @return true if successful; else return false
      */
     bool move_to(Square& location) override;
 

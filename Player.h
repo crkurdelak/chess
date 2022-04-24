@@ -18,38 +18,39 @@
 class Player {
 public:
     /**
-     * TODO comment
-     * @param color
-     * @param board
+     * @brief Creates a new player object.
+     * @param color the color of this player
+     * @param board the board where this player's pieces will go
      */
     Player(Piece::Color color, const Board& board);
 
 
     /**
-     * TODO comment
-     * @return
+     * @brief Returns the color of this player.
+     * @return the color of this player
      */
     Piece::Color color() const;
 
 
     /**
-     * TODO comment
-     * @param from
-     * @param to
-     * @return
+     * @brief Moves the piece at the given "from" square to the given "to" square and returns
+     * true if successful.
+     * @param from the square to move a piece from
+     * @param to the square to move a piece to
+     * @return true if the move is successful; else returns false
      */
     bool make_move(const std::string& from, const std::string& to);
 
 
     /**
-     * TODO comment
-     * @return
+     * @brief Returns the combined value of all this player's pieces that are still on the board.
+     * @return the combined value of all this player's pieces that are still on the board
      */
     piece_value_t piece_value() const;
 
 
     /**
-     * TODO comment
+     * @brief A destructor for the Player class.
      */
     ~Player();
 

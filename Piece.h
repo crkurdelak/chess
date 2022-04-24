@@ -93,7 +93,9 @@ class Piece {
 
 
     /**
-     * TODO comment
+     * @brief Captures the previous occupant of this piece's current square.
+     *
+     * A piece can only capture a piece of the opposite color.
      */
     void capture();
 
