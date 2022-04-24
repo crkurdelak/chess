@@ -37,36 +37,39 @@ class Board {
 
 
     /**
-     * TODO comment
-     * @param identifier
-     * @return
+     * @brief Returns the square at the given standard chess coordinates.
+     *
+     * Translates standard chess notation to array indices, then calls square_at(rank, file)
+     *
+     * @param identifier the standard chess notation for the square to return
+     * @return the square at the given coordinates
      */
     Square& square_at(const std::string& identifier) const;
 
 
     /**
-     * TODO comment
-     * @param from
-     * @param to
-     * @return
+     * @brief Returns true if the given rank is valid.
+     * @param from the the starting square
+     * @param to the ending square
+     * @return true if the given rank is valid; else returns false
      */
     bool is_valid_rank(const Square& from, const Square& to) const;
 
 
     /**
-     * TODO comment
-     * @param from
-     * @param to
-     * @return
+     * @brief Returns true if the given file is valid.
+     * @param from the the starting square
+     * @param to the ending square
+     * @return true if the given file is valid; else returns false
      */
     bool is_valid_file(const Square& from, const Square& to) const;
 
 
     /**
-     * TODO comment
-     * @param from
-     * @param to
-     * @return
+     * @brief Returns true if the given diagonal is valid.
+     * @param from the the starting square
+     * @param to the ending square
+     * @return true if the given diagonal is valid; else returns false
      */
     bool is_valid_diag(const Square& from, const Square& to) const;
 
