@@ -24,8 +24,66 @@ Square &Board::square_at(size_t rank, size_t file) const {
 
 
 Square &Board::square_at(const std::string &identifier) const {
-    // TODO implement square_at
-    return <#initializer#>;
+    size_t file = 0;
+    size_t rank = 0;
+    std::string file_string = identifier.substr(0, 1);
+    std::string rank_string = identifier.substr(1, 1);
+
+    // translate chess notation to indices
+    // first character is file
+    if (file_string == "a") {
+        file = 0;
+    }
+    else if (file_string == "b") {
+        file = 1;
+    }
+    else if (file_string == "c") {
+        file = 2;
+    }
+    else if (file_string == "d") {
+        file = 3;
+    }
+    else if (file_string == "e") {
+        file = 4;
+    }
+    else if (file_string == "f") {
+        file = 5;
+    }
+    else if (file_string == "g") {
+        file = 6;
+    }
+    else if (file_string == "h") {
+        file = 7;
+    }
+
+    // second character is rank
+    if (rank_string == "1") {
+        rank = 7;
+    }
+    else if (rank_string == "2") {
+        rank = 6;
+    }
+    else if (rank_string == "3") {
+        rank = 5;
+    }
+    else if (rank_string == "4") {
+        rank = 4;
+    }
+    else if (rank_string == "5") {
+        rank = 3;
+    }
+    else if (rank_string == "6") {
+        rank = 2;
+    }
+    else if (rank_string == "7") {
+        rank = 1;
+    }
+    else if (rank_string == "8") {
+        rank = 0;
+    }
+
+    // call other square_at method
+    return this->square_at(rank, file);
 }
 
 
