@@ -32,7 +32,7 @@ Square &Board::square_at(const std::string &identifier) const {
 bool Board::is_clear_rank(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t rank = from.rank();
-    if (is_in_bounds(from) && is_in_bounds(to) && rank == to.rank()) {
+    if (this->is_valid_rank(from, to)) {
         size_t i = from.file() + 1;
         while (i < to.file() && is_clear) {
             if (_squares[rank][i]->is_occupied()) {
@@ -51,7 +51,7 @@ bool Board::is_clear_rank(const Square &from, const Square &to) const {
 bool Board::is_clear_file(const Square &from, const Square &to) const {
     bool is_clear = true;
     size_t file = from.file();
-    if (is_in_bounds(from) && is_in_bounds(to) && file == to.file()) {
+    if (this->is_valid_file(from, to)) {
         size_t i = from.rank() + 1;
         while (i < to.rank() && is_clear) {
             if (_squares[i][file]->is_occupied()) {
@@ -68,15 +68,8 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
 
 
 bool Board::is_clear_diag(const Square &from, const Square &to) const {
-    const double EPSILON = 1e-10;
     bool is_clear = true;
-    double slope = (to.rank() * 1.0 - from.rank()) / (to.file() * 1.0 - from.file());
-    if (is_in_bounds(from)
-    && is_in_bounds(to)
-    && ((slope > 0
-    && slope - 1 <= EPSILON)
-    || (slope < 0
-    && slope + 1 <= EPSILON))) {
+    if (this->is_valid_diag(from, to)) {
         size_t rank = from.rank() + 1;
         size_t file = from.file() + 1;
         while (rank < to.rank() && file < to.file() && is_clear) {
@@ -114,18 +107,22 @@ bool Board::is_in_bounds(const Square &square) {
 
 
 bool Board::is_valid_rank(const Square &from, const Square &to) const {
-    // TODO implement is_valid_rank
-    return false;
+    return is_in_bounds(from) && is_in_bounds(to) && from.rank() == to.rank();
 }
 
 bool Board::is_valid_file(const Square &from, const Square &to) const {
-    // TODO implement is_valid_file
-    return false;
+    return is_in_bounds(from) && is_in_bounds(to) && from.file() == to.file();
 }
 
 bool Board::is_valid_diag(const Square &from, const Square &to) const {
-    // TODO implement is_valid_diag
-    return false;
+    const double EPSILON = 1e-10;
+    double slope = (to.rank() * 1.0 - from.rank()) / (to.file() * 1.0 - from.file());
+    return is_in_bounds(from)
+           && is_in_bounds(to)
+           && ((slope > 0
+                && slope - 1 <= EPSILON)
+           || (slope < 0
+                && slope + 1 <= EPSILON));
 }
 
 

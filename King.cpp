@@ -1,6 +1,6 @@
 /**
  * @file King.cpp
- * @brief DImplementation of the King class.
+ * @brief Implementation of the King class.
  */
 
 #include "King.h"
