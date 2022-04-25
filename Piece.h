@@ -116,6 +116,12 @@ class Piece {
     virtual ~Piece() = default;
 
 
+    /**
+     * @brief Returns true if this piece needs a clear path in order to move.
+     * @return true if this piece needs a clear path; else returns false
+     */
+    virtual bool needs_clear_path() const = 0;
+
 private:
     const Piece::Color _color;
     Square* _location = nullptr;

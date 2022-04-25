@@ -42,3 +42,8 @@ std::string Queen::str() const {
     }
     return piece_symbol;
 }
+
+
+bool needs_clear_path() {
+    return true;
+}

@@ -56,3 +56,8 @@ std::string Pawn::str() const {
 }
 
 
+bool needs_clear_path() {
+    return true;
+}
+
+
