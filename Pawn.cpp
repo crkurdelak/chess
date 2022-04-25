@@ -11,22 +11,41 @@ piece_value_t Pawn::value() const {
 }
 
 bool Pawn::can_move_to(const Square &location) const {
-    // TODO make it able to move one diagonal square to capture
     bool result = false;
     if (this -> location() != nullptr) {
         if (&location != this->location()) {
             // black can only move to smaller rank numbers (larger indices)
             if (this->color() == Piece::Color::black) {
-                if (location.rank() == this->location()->rank() + 1
-                && location.file() == this->location()->file()) {
-                    result = true;
+                if (location.occupant() == nullptr) {
+                    if (location.rank() == this->location()->rank() + 1
+                        && location.file() == this->location()->file()) {
+                        result = true;
+                    }
+                }
+                // if it's trying to capture, make sure it's one diagonal square
+                else if (location.occupant()->color() != this->color()) {
+                    if ((location.rank() == this->location()->rank() + 1)
+                        && (location.file() == this->location()->file() + 1
+                        || location.file() == this->location()->file() - 1)) {
+                        result = true;
+                    }
                 }
             }
             // white can only move to larger rank number (smaller indices)
             else {
-                if (location.rank() == this->location()->rank() - 1
-                && location.file() == this->location()->file()) {
-                    result = true;
+                if (location.occupant() == nullptr) {
+                    if (location.rank() == this->location()->rank() - 1
+                        && location.file() == this->location()->file()) {
+                        result = true;
+                    }
+                }
+                else if (location.occupant()->color() != this->color()) {
+                    // if it's trying to capture, make sure it's one diagonal square
+                    if ((location.rank() == this->location()->rank() - 1)
+                        && (location.file() == this->location()->file() + 1
+                        || location.file() == this->location()->file() - 1)) {
+                        result = true;
+                    }
                 }
             }
         }

@@ -39,4 +39,5 @@ bool Piece::move_to(Square &location) {
 
 void Piece::capture() {
     // TODO implement capture
+    // set old occupant's location to nullptr
 }
