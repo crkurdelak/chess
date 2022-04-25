@@ -17,9 +17,18 @@ bool Pawn::can_move_to(const Square &location) const {
             // black can only move to smaller rank numbers (larger indices)
             if (this->color() == Piece::Color::black) {
                 if (location.occupant() == nullptr) {
-                    if (location.rank() == this->location()->rank() + 1
-                        && location.file() == this->location()->file()) {
-                        result = true;
+                    // pawns that have not been moved can move forward two squares
+                    if (!_moved) {
+                        if (location.rank() == this->location()->rank() + 2
+                            && location.file() == this->location()->file()) {
+                            result = true;
+                        }
+                    }
+                    else {
+                        if (location.rank() == this->location()->rank() + 1
+                            && location.file() == this->location()->file()) {
+                            result = true;
+                        }
                     }
                 }
                 // if it's trying to capture, make sure it's one diagonal square
@@ -34,9 +43,18 @@ bool Pawn::can_move_to(const Square &location) const {
             // white can only move to larger rank number (smaller indices)
             else {
                 if (location.occupant() == nullptr) {
-                    if (location.rank() == this->location()->rank() - 1
-                        && location.file() == this->location()->file()) {
-                        result = true;
+                    // pawns that have not been moved can move forward two squares
+                    if (!_moved) {
+                        if (location.rank() == this->location()->rank() - 2
+                            && location.file() == this->location()->file()) {
+                            result = true;
+                        }
+                    }
+                    else {
+                        if (location.rank() == this->location()->rank() - 1
+                            && location.file() == this->location()->file()) {
+                            result = true;
+                        }
                     }
                 }
                 else if (location.occupant()->color() != this->color()) {
@@ -55,9 +73,13 @@ bool Pawn::can_move_to(const Square &location) const {
 
 
 bool Pawn::move_to(Square &location) {
-    // TODO implement move_to
+    // TODO find out if this or can_move_to should be handling unmoved pawns moving two squares
     // needs to be able to move 2 spaces if this pawn has not moved yet
-    return Piece::move_to(location);
+    bool result = Piece::move_to(location);
+    if (result) {
+        _moved = true;
+    }
+    return result;
 }
 
 
