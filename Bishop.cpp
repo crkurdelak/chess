@@ -41,6 +41,6 @@ std::string Bishop::str() const {
 }
 
 
-bool needs_clear_path() {
+bool Bishop::needs_clear_path() const {
     return true;
 }

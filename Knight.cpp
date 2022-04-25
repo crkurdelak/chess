@@ -52,6 +52,6 @@ std::string Knight::str() const {
 }
 
 
-bool needs_clear_path() {
+bool Knight::needs_clear_path() const {
     return false;
 }

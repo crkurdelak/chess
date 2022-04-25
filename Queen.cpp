@@ -44,6 +44,6 @@ std::string Queen::str() const {
 }
 
 
-bool needs_clear_path() {
+bool Queen::needs_clear_path() const {
     return true;
 }

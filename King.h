@@ -41,6 +41,13 @@ class King : public Piece {
      * @copydoc Piece::str
      */
     std::string str() const override;
+
+
+    /**
+     *
+     * @copydoc Piece::needs_clear_path
+     */
+    bool needs_clear_path() const override;
 };
 
 #endif

@@ -36,6 +36,6 @@ std::string Rook::str() const {
 }
 
 
-bool needs_clear_path() {
+bool Rook::needs_clear_path() const {
     return true;
 }

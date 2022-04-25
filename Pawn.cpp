@@ -75,7 +75,7 @@ std::string Pawn::str() const {
 }
 
 
-bool needs_clear_path() {
+bool Pawn::needs_clear_path() const {
     return true;
 }
 

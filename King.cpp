@@ -49,6 +49,6 @@ std::string King::str() const {
 }
 
 
-bool needs_clear_path() {
+bool King::needs_clear_path() const {
     return true;
 }
