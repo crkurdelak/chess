@@ -18,7 +18,7 @@ Player::Player(Piece::Color color, const Board &board) : _color(color), _board(b
     if (color == Piece::Color::black) {
         // create all the black pieces in the right places
         // pawns
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i <= 7; i++) {
             _pieces.push_back(new Pawn(color, board.square_at(1, i)));
         }
         // rooks
@@ -40,7 +40,7 @@ Player::Player(Piece::Color color, const Board &board) : _color(color), _board(b
     else {
         // create all the white pieces in the right places
         // pawns
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i <= 7; i++) {
             _pieces.push_back(new Pawn(color, board.square_at(6, i)));
         }
         // rooks

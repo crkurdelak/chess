@@ -5,20 +5,18 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(chess
+add_executable( chess
         Bishop.cpp
-
         Board.cpp
-
         King.cpp
-
         Knight.cpp
-
         Pawn.cpp
-
         Piece.cpp
-
         Queen.cpp
-
         Rook.cpp
-        Square.cpp ChessDemo.cpp Chess.cpp Chess.h Player.cpp Player.h)
+        Square.cpp
+        Chess.cpp
+        Chess.h
+        Player.cpp
+        Player.h
+        )
