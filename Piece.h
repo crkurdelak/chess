@@ -85,7 +85,8 @@ class Piece {
 
 
     /**
-     * @brief Moves this piece to the given location.
+     * @brief Moves this piece to the given location, and captures any enemy piece occupying that
+     * location.
      * @param location the new location
      * @return true if successful; else return false
      */
@@ -94,6 +95,9 @@ class Piece {
 
     /**
      * @brief Captures the previous occupant of this piece's current square.
+     *
+     * Sets this piece's location square that it is no longer occupied, and sets this piece's
+     * location to nullptr.
      *
      * A piece can only capture a piece of the opposite color.
      */

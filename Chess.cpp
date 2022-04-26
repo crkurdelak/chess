@@ -8,7 +8,7 @@
 
 /**
  * A main class for the chess game.
- * @return TODO find out what to return
+ * @return 0 on success, 1 if there is an error
  */
 int main() {
     // TODO implement chess

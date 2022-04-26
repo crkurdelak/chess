@@ -73,13 +73,11 @@ bool Pawn::can_move_to(const Square &location) const {
 
 
 bool Pawn::move_to(Square &location) {
-    // TODO find out if this or can_move_to should be handling unmoved pawns moving two squares
-    // needs to be able to move 2 spaces if this pawn has not moved yet
-    bool result = Piece::move_to(location);
-    if (result) {
+    bool is_successful = Piece::move_to(location);
+    if (is_successful) {
         _moved = true;
     }
-    return result;
+    return is_successful;
 }
 
 

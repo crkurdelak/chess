@@ -10,10 +10,7 @@
 #include "Bishop.h"
 #include "Queen.h"
 
-Player::Player(Piece::Color color, const Board &board) {
-    // TODO find out how to assign these correctly
-    _color = color;
-    _board = board;
+Player::Player(Piece::Color color, const Board &board) : _color(color), _board(board) {
     _pieces = std::vector<Piece*>();
     _king = nullptr;
 
@@ -70,7 +67,6 @@ Piece::Color Player::color() const {
 
 
 bool Player::make_move(const std::string &from, const std::string &to) {
-    // TODO implement make_move
     Square from_sq = _board.square_at(from);
     Square to_sq = _board.square_at(to);
     auto my_piece = from_sq.occupant();
@@ -82,19 +78,16 @@ bool Player::make_move(const std::string &from, const std::string &to) {
                 if (my_piece->needs_clear_path()) {
                     if (_board.is_valid_file(from_sq, to_sq)) {
                         if (_board.is_clear_file(from_sq, to_sq)) {
-                            // TODO capture any enemy piece
                             my_piece->move_to(to_sq);
                             result = true;
                         }
                     } else if (_board.is_valid_rank(from_sq, to_sq)) {
                         if (_board.is_clear_rank(from_sq, to_sq)) {
-                            // TODO capture any enemy piece
                             my_piece->move_to(to_sq);
                             result = true;
                         }
                     } else if (_board.is_valid_diag(from_sq, to_sq)) {
                         if (_board.is_clear_diag(from_sq, to_sq)) {
-                            // TODO capture any enemy piece
                             my_piece->move_to(to_sq);
                             result = true;
                         }

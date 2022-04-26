@@ -28,16 +28,19 @@ bool Piece::is_on_square() const {
 }
 
 bool Piece::move_to(Square &location) {
-    bool result = false;
-    if (can_move_to(location)) {
-        set_location(&location);
-        result = true;
+    bool is_successful = false;
+    if ( this->is_on_square() && this->can_move_to(location)) {
+        if (location.is_occupied()) {
+            location.occupant()->capture();
+        }
+        this->set_location(&location);
+        is_successful = true;
     }
 
-    return result;
+    return is_successful;
 }
 
 void Piece::capture() {
-    // TODO implement capture
-    // set old occupant's location to nullptr
+    this->location()->set_occupant(nullptr);
+    this->set_location(nullptr);
 }
