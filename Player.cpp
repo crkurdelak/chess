@@ -78,21 +78,23 @@ bool Player::make_move(const std::string &from, const std::string &to) {
                 if (my_piece.needs_clear_path()) {
                     if (_board.is_valid_file(from_sq, to_sq)) {
                         if (_board.is_clear_file(from_sq, to_sq)) {
-                            my_piece.move_to(to_sq);
-                            result = true;
+                            //my_piece.move_to(to_sq);
+                            //result = true;
                         }
                     } else if (_board.is_valid_rank(from_sq, to_sq)) {
                         if (_board.is_clear_rank(from_sq, to_sq)) {
-                            my_piece.move_to(to_sq);
-                            result = true;
+                            //my_piece.move_to(to_sq);
+                            //result = true;
                         }
                     } else if (_board.is_valid_diag(from_sq, to_sq)) {
                         if (_board.is_clear_diag(from_sq, to_sq)) {
-                            my_piece.move_to(to_sq);
-                            result = true;
+                            //my_piece.move_to(to_sq);
+                            //result = true;
                         }
                     }
                 }
+                my_piece.move_to(to_sq);
+                result = true;
             }
         }
     }
