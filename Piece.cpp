@@ -19,7 +19,9 @@ void Piece::set_location(Square *location) {
         Square* old_location = this->location();
         old_location->set_occupant(nullptr);
     }
-    location->set_occupant(this);
+    if (location != nullptr) {
+        location->set_occupant(this);
+    }
     _location = location;
 }
 
