@@ -67,8 +67,8 @@ Piece::Color Player::color() const {
 
 
 bool Player::make_move(const std::string &from, const std::string &to) {
-    Square from_sq = _board.square_at(from);
-    Square to_sq = _board.square_at(to);
+    Square& from_sq = _board.square_at(from);
+    Square& to_sq = _board.square_at(to);
     Piece& my_piece = *from_sq.occupant();
     bool result = false;
 
