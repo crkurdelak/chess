@@ -114,8 +114,8 @@ bool Board::is_clear_file(const Square &from, const Square &to) const {
         while (i < to.rank() && is_clear) {
             if (_squares[i][file]->is_occupied()) {
                 is_clear = false;
-                i++;
             }
+            i++;
         }
     }
     else {
