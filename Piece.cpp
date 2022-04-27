@@ -31,7 +31,7 @@ bool Piece::is_on_square() const {
 
 bool Piece::move_to(Square &location) {
     bool is_successful = false;
-    if ( this->is_on_square() && this->can_move_to(location)) {
+    if ( this->is_on_square()) {
         if (location.is_occupied()) {
             location.occupant()->capture();
         }
